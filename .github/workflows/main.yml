@@ -24,8 +24,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Initiation
-      uses: martopad/adventures-blazor@master
+    # - name: Initiation
+    #   uses: martopad/adventures-blazor@master
       # run: |
       #   pwd
       #   ls /home/runner/work/adventures-blazor/adventures-blazor
