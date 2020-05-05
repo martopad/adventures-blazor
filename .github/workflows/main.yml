@@ -34,7 +34,7 @@ jobs:
     #   run: docker run --mount type=bind,source=${GITHUB_WORKSPACE},target=/app myblazor:latest dotnet build --configuration Release /app
 
     - name: Publish app
-      run: docker run --mount type=bind,source=${GITHUB_WORKSPACE},target=/app myblazor:latest dotnet publish -c Release -r linux-x64 -o advntrsblazor /app
+      run: docker run --mount type=bind,source=${GITHUB_WORKSPACE},target=/app myblazor:latest dotnet publish -c Release -r linux-x64 -o /app/advntrsblazor /app
 
     # - name: Test app
     #   run: docker run --mount type=bind,source=${GITHUB_WORKSPACE},target=/app myblazor:latest dotnet test --no-restore --verbosity normal /app
