@@ -31,3 +31,9 @@ jobs:
 
     - name: Test app
       run: docker run --mount type=bind,source=${GITHUB_WORKSPACE},target=/app myblazor:latest dotnet test --no-restore --verbosity normal /app
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: blazorArtifacts
+        path: ${GITHUB_WORKSPACE}/bin
