@@ -30,7 +30,10 @@ jobs:
 
     # Runs a set of commands using the runners shell
     - name: build
-      run: dotnet build
+      run: |
+        pwd
+        ls $PWD
+        dotnet build
 
     - name: test
       run: dotnet test --no-restore --verbosity normal
