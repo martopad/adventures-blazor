@@ -23,9 +23,9 @@ jobs:
     # Runs a single command using the runners shell
     - name: Initiation
       run:
-        pwd
-        ls /github/workspace
-        dotnet restore
+        - pwd
+        - ls /github/workspace
+        - dotnet restore
 
     # Runs a set of commands using the runners shell
     - name: build
