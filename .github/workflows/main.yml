@@ -26,8 +26,14 @@ jobs:
         echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
         docker build . --tag myblazor:latest
 
-    - name: Run Container
-      run: docker run --mount type=bind,source=${GITHUB_WORKSPACE},target=/app myblazor:latest
+    - name: Clean working copy
+      run: docker run --mount type=bind,source=${GITHUB_WORKSPACE},target=/app myblazor:latest dotnet restore /app
+
+    - name: Build app
+    run: docker run --mount type=bind,source=${GITHUB_WORKSPACE},target=/app myblazor:latest dotnet build /app
+
+    - name: Test app
+    run: docker run --mount type=bind,source=${GITHUB_WORKSPACE},target=/app myblazor:latest dotnet test /app
 
     # - name: Initiation
     #   uses: martopad/adventures-blazor@master
