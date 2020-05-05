@@ -30,10 +30,10 @@ jobs:
       run: docker run --mount type=bind,source=${GITHUB_WORKSPACE},target=/app myblazor:latest dotnet restore /app
 
     - name: Build app
-    run: docker run --mount type=bind,source=${GITHUB_WORKSPACE},target=/app myblazor:latest dotnet build /app
+      run: docker run --mount type=bind,source=${GITHUB_WORKSPACE},target=/app myblazor:latest dotnet build /app
 
     - name: Test app
-    run: docker run --mount type=bind,source=${GITHUB_WORKSPACE},target=/app myblazor:latest dotnet test /app
+      run: docker run --mount type=bind,source=${GITHUB_WORKSPACE},target=/app myblazor:latest dotnet test /app
 
     # - name: Initiation
     #   uses: martopad/adventures-blazor@master
