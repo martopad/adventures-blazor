@@ -27,7 +27,7 @@ jobs:
         docker build . --tag myblazor:latest
 
     - name: Run Container
-      docker run myblazor:latest
+      run: docker run myblazor:latest
 
     # - name: Initiation
     #   uses: martopad/adventures-blazor@master
