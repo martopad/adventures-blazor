@@ -24,6 +24,7 @@ jobs:
     - name: Initiation
       run:
         pwd
+        ls /github/workspace
         dotnet restore
 
     # Runs a set of commands using the runners shell
