@@ -1,0 +1,5 @@
+name: "My Blazor Docker container"
+description: "WEEEEE"
+runs:
+    using: 'docker'
+    image: 'dockerfile'
