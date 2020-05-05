@@ -37,3 +37,10 @@ jobs:
       with:
         name: blazorArtifacts
         path: ./bin
+
+    - name: 'Deploy to Azure WebApp'
+    uses: azure/webapps-deploy@v2
+    with:
+      app-name: advntrsblazor
+      publish-profile: ${{ secrets.azureWebAppPublishProfile }}
+      package: ./bin
