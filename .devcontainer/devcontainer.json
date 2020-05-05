@@ -1,0 +1,10 @@
+{
+    "name": "My Blazor dev environment",
+    "dockerFile": "dockerfile",
+    "extensions": [ "ms-dotnettools.csharp", "ms-vscode.js-debug-nightly" ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "debug.javascript.usePreview": true
+    },
+    "forwardPorts": [5000, 5001],
+}
