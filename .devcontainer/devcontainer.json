@@ -1,6 +1,6 @@
 {
     "name": "My Blazor dev environment",
-    "dockerFile": "dockerfile",
+    "dockerFile": "../dockerfile",
     "extensions": [ "ms-dotnettools.csharp", "ms-vscode.js-debug-nightly" ],
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash",
