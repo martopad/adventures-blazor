@@ -39,18 +39,18 @@ jobs:
     # - name: Test app
     #   run: docker run --mount type=bind,source=${GITHUB_WORKSPACE},target=/app myblazor:latest dotnet test --no-restore --verbosity normal /app
 
-    # - name: Upload Artifacts
-    #   uses: actions/upload-artifact@v2
-    #   with:
-    #     name: blazorArtifacts
-    #     path: ./bin
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: blazorArtifacts
+        path: ./advntrsblazor
 
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v2
       with:
         app-name: advntrsblazor
         publish-profile: ${{ secrets.azureWebAppPublishProfile }}
-        package: ./advntrsblazor/wwwroot
+        package: ./advntrsblazor
 
     # Azure logout
     - name: logout
