@@ -26,6 +26,9 @@ jobs:
         echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
         docker build . --tag myblazor:latest
 
+    - name: Run Container
+      docker run myblazor:latest
+
     # - name: Initiation
     #   uses: martopad/adventures-blazor@master
       # run: |
