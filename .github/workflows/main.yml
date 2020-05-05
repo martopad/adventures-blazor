@@ -24,7 +24,7 @@ jobs:
     - name: Initiation
       run: |
         pwd
-        ls /github/workspace
+        ls /home/runner/work/adventures-blazor/adventures-blazor
         dotnet restore
 
     # Runs a set of commands using the runners shell
