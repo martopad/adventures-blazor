@@ -50,7 +50,7 @@ jobs:
       with:
         app-name: advntrsblazor
         publish-profile: ${{ secrets.azureWebAppPublishProfile }}
-        package: ./bin/Release/netstandard2.1/linux-x64/
+        package: ./bin/Release/netstandard2.1/linux-x64/wwwroot/
 
     # Azure logout
     - name: logout
