@@ -30,8 +30,11 @@ jobs:
         echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
         docker build . --tag myblazor:latest
 
-    - name: Build app
-      run: docker run --mount type=bind,source=${GITHUB_WORKSPACE},target=/app myblazor:latest dotnet build --configuration Release /app
+    # - name: Build app
+    #   run: docker run --mount type=bind,source=${GITHUB_WORKSPACE},target=/app myblazor:latest dotnet build --configuration Release /app
+
+    - name: Publish app
+      run: docker run --mount type=bind,source=${GITHUB_WORKSPACE},target=/app myblazor:latest dotnet publish -c Release -r linux-x64 /app
 
     # - name: Test app
     #   run: docker run --mount type=bind,source=${GITHUB_WORKSPACE},target=/app myblazor:latest dotnet test --no-restore --verbosity normal /app
@@ -47,7 +50,7 @@ jobs:
       with:
         app-name: advntrsblazor
         publish-profile: ${{ secrets.azureWebAppPublishProfile }}
-        package: ./bin/Release
+        package: ./bin/Release/netstandard2.1/linux-x64/
 
     # Azure logout
     - name: logout
