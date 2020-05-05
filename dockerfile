@@ -7,3 +7,5 @@ RUN rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-p
         dotnet-runtime-3.1
 
 ENV ASPNETCORE_URLS "https://+;http://+"
+
+CMD ["echo", "I JUST RAN!"]
