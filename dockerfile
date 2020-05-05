@@ -8,4 +8,6 @@ RUN rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-p
 
 ENV ASPNETCORE_URLS "https://+;http://+"
 
-ENTRYPOINT ["entrypoint.sh"]
+COPY entrypoint.sh /bin/entrypoint
+
+ENTRYPOINT ["entrypoint"]
