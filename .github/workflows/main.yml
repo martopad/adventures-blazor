@@ -27,7 +27,7 @@ jobs:
         docker build . --tag myblazor:latest
 
     - name: Run Container
-      run: docker run myblazor:latest
+      run: docker run --mount type=bind,source=${GITHUB_WORKSPACE},target=/app myblazor:latest
 
     # - name: Initiation
     #   uses: martopad/adventures-blazor@master
